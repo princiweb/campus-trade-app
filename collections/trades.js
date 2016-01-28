@@ -1,0 +1,1 @@
+Trades = new Mongo.Collection('trades');
