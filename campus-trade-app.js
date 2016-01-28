@@ -1,9 +1,10 @@
 Trades = new Mongo.Collection('trades');
 
-
 if (Meteor.isClient) {
 
   moment.locale('pt-br');
+
+  Meteor.subscribe('trades');
 
   Template.body.helpers({
     trades: function() {
