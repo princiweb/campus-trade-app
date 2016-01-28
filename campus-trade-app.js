@@ -14,7 +14,6 @@ if (Meteor.isClient) {
       return moment(date).fromNow();
     }
   });
-
   
 }
 
