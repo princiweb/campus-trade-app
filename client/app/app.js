@@ -6,10 +6,10 @@ Template.body.helpers({
   trades: function() {
     var options = {};
     if(Session.get('busca-offered')){
-      options.offered = {'$regex': '/' + Session.get('busca-offered') + '/i'};
+      options.offered =  $text: { $search: Session.get('busca-offered') };
     }
     if(Session.get('busca-wanted')){
-      options.wanted = {'$regex': '/' + Session.get('busca-wanted') + '/i'};
+      options.wanted =  $text: { $search: Session.get('busca-wanted') };
     }
     return Trades.find(options, {sort: {createdAt: -1} }).fetch();
   },
